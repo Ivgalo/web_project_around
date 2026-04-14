@@ -94,9 +94,15 @@
 }
 
 .main__gallery-image {
-  width: 100%;
+  max-width: 282px;
+  height: 282px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+}
+
+.main__gallery-image:hover {
+  opacity: 0.9;
+  cursor: pointer;
 }
 
 .main__gallery-content {
@@ -107,9 +113,14 @@
 }
 
 .main__gallery-paragraph {
+  max-width: 230px;
+  height: 25px;
   font-family: "Inter-Black", sans-serif;
   font-size: 24px;
   margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .main__gallery-paragraph_text_overflow {
@@ -118,10 +129,22 @@
   overflow: hidden;
 }
 
+.main__button_trash {
+  border: none;
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: url(../images/Trash.svg) center no-repeat;
+}
+
 .main__button_like {
   border: none;
+  width: 25px;
   height: 19px;
   align-self: flex-end;
+  background: url(../images/Vector-like.svg) center no-repeat;
 }
 
 .main__button_like_active {
