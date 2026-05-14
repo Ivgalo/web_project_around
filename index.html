@@ -25,17 +25,38 @@
                     <p class="popup__paragraph"></p>
                 </div>
             </div>
-            <form action="#" class="popup__container">
-                <h2 class="popup__subtitle">h</h2>
+            <form class="popup__form" id="formEdit" novalidate>
+                <h2 class="popup__subtitle">Editar perfil</h2>
                 <fieldset class="popup__content">
-                    <input type="text" class="popup__input popup__input_name" required />
-                    <input type="text" class="popup__input popup__input_about" required />
-                </fieldset>
-                <fieldset class="popup__content">
+                    <label class="popup__field">
+                        <input type="text" class="popup__input popup__input_name" placeholder="Nombre" minlength="2"
+                            maxlength="40" id="name-input" required />
+                        <span class="popup__input-error name-input-error"></span>
+                    </label>
+                    <label class="popup__field">
+                        <input type="text" class="popup__input popup__input_about" placeholder="Acerca de mi"
+                            minlength="2" maxlength="200" id="about-input" required />
+                        <span class="popup__input-error about-input-error"></span>
+                    </label>
                     <button type="submit" class="popup__button popup__button_save">
                         Guardar
                     </button>
-                    <button type="button" class="popup__button popup__button_add" disabled>
+                </fieldset>
+            </form>
+            <form class="popup__form" id="formAdd" novalidate>
+                <h2 class="popup__subtitle">Nuevo lugar</h2>
+                <fieldset class="popup__content">
+                    <label class="popup__field">
+                        <input type="text" class="popup__input popup__input_title" placeholder="Título" minlength="2"
+                            maxlength="30" id="title-input" required />
+                        <span class="popup__input-error title-input-error"></span>
+                    </label>
+                    <label class="popup__field">
+                        <input type="url" class="popup__input popup__input_url" placeholder="URL a la imagen"
+                            id="url-input" required />
+                        <span class="popup__input-error url-input-error"></span>
+                    </label>
+                    <button type="submit" class="popup__button popup__button_add">
                         Guardar
                     </button>
                 </fieldset>
@@ -50,8 +71,8 @@
                     <img src="./images/JacquesCousteau.jpg" alt="profile-image" class="main__profile-image" />
                 </div>
                 <div class="main__content-paragraph">
-                    <p class="main__paragraph main__paragraph_name">Jacques Cousteau </p>
-                    <p class="main__paragraph main__paragraph_about">Explordor</p>
+                    <p class="main__paragraph main__paragraph_name">Jacques Cousteau</p>
+                    <p class="main__paragraph main__paragraph_about">Explorador</p>
                     <button type="button" class="main__button main__button_edit">
                         &#x1F58C;
                     </button>
@@ -76,7 +97,8 @@
             <p class="footer__copyright">&#x00a9; 2024 Around The U.S.</p>
         </footer>
     </div>
-    <script src="./scripts/index.js"></script>
+    <script src="./script/script.js"></script>
+    <script src="./script/validate.js"></script>
 </body>
 
 </html>
