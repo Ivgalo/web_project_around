@@ -1,10 +1,9 @@
-import { imagePopup } from "./utils.js";
-
-class Card {
-  constructor(data, cardSelector) {
+export default class Card {
+  constructor(data, cardSelector, handleCardClick) {
     this._name = data.name;
     this._link = data.link;
     this._cardSelector = cardSelector;
+    this._popupImage = handleCardClick;
   }
 
   _getTemplate() {
@@ -32,23 +31,23 @@ class Card {
       });
   }
 
-  _popup() {
+  _handleCardClick() {
     this._element
       .querySelector(".main__gallery-image")
       .addEventListener("click", () => {
-        imagePopup(this._name, this._link);
+        this._popupImage.open(this._link, this._name);
       });
   }
 
-  _setListener() {
+  _setEventsListener() {
     this._like();
     this._trash();
-    this._popup();
+    this._handleCardClick();
   }
 
   getCreateCard() {
     this._element = this._getTemplate();
-    this._setListener();
+    this._setEventsListener();
 
     this._element.querySelector(".main__gallery-image").src = this._link;
     this._element.querySelector(".main__gallery-image").alt = this._link;
@@ -58,15 +57,3 @@ class Card {
     return this._element;
   }
 }
-
-class FormCard extends Card {
-  constructor(cardSelector) {
-    super({}, cardSelector);
-  }
-  handleCreateCard(title, link) {
-    this._name = title;
-    this._link = link;
-  }
-}
-
-export { Card, FormCard };

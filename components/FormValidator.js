@@ -1,6 +1,4 @@
-import { config, formValidators } from "./index.js";
-
-class FormValidator {
+export default class FormValidator {
   constructor(config, formElement) {
     this._config = config;
     this._formElement = formElement;
@@ -76,23 +74,7 @@ class FormValidator {
   resetValidation() {
     this._inputList.forEach((inputElement) => {
       this._hideInputError(inputElement);
-      inputElement.value = "";
     });
     this._toggleButtonState();
   }
 }
-
-const resetFormAndValidation = (modal) => {
-  const formElements = modal.querySelectorAll(config.formSelector);
-  formElements.forEach((formElement) => {
-    formElement.reset();
-    const formValidator = formValidators.find(
-      (validator) => validator._formElement === formElement
-    );
-    if (formValidator) {
-      formValidator.resetValidation();
-    }
-  });
-};
-
-export { FormValidator, resetFormAndValidation as reset };

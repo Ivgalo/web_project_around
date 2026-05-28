@@ -2,102 +2,105 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Alrededor de los EE.UU." />
-    <meta name="author" content="Ivan Garduño" />
-    <meta name="keywords" content="html, css, javascript" />
-    <title>Alrededor de los EE.UU.</title>
-    <link rel="stylesheet" href="./pages/index.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Alrededor de los EE.UU." />
+  <meta name="author" content="Ivan Garduño" />
+  <meta name="keywords" content="html, css, javascript" />
+  <title>Alrededor de los EE.UU.</title>
+  <link rel="stylesheet" href="./page/index.css" />
+  <link rel="favicon" href="favicon.svg" />
 </head>
 
 <body>
-    <div class="page">
-        <div class="popup">
-            <button type="button" class="popup__button popup__button_close">
-                &#x1F7A9;
-            </button>
-            <div class="popup__images">
-                <div class="popup__content-image">
-                    <img class="popup__image" src="#" alt="" />
-                </div>
-                <div class="popup__paragraph-content">
-                    <p class="popup__paragraph"></p>
-                </div>
-            </div>
-            <form class="popup__form" id="formEdit" novalidate>
-                <h2 class="popup__subtitle">Editar perfil</h2>
-                <fieldset class="popup__content">
-                    <label class="popup__field">
-                        <input type="text" class="popup__input popup__input_name" placeholder="Nombre" minlength="2"
-                            maxlength="40" id="name-input" required />
-                        <span class="popup__input-error name-input-error"></span>
-                    </label>
-                    <label class="popup__field">
-                        <input type="text" class="popup__input popup__input_about" placeholder="Acerca de mi"
-                            minlength="2" maxlength="200" id="about-input" required />
-                        <span class="popup__input-error about-input-error"></span>
-                    </label>
-                    <button type="submit" class="popup__button popup__button_save">
-                        Guardar
-                    </button>
-                </fieldset>
-            </form>
-            <form class="popup__form" id="formAdd" novalidate>
-                <h2 class="popup__subtitle">Nuevo lugar</h2>
-                <fieldset class="popup__content">
-                    <label class="popup__field">
-                        <input type="text" class="popup__input popup__input_title" placeholder="Título" minlength="2"
-                            maxlength="30" id="title-input" required />
-                        <span class="popup__input-error title-input-error"></span>
-                    </label>
-                    <label class="popup__field">
-                        <input type="url" class="popup__input popup__input_url" placeholder="URL a la imagen"
-                            id="url-input" required />
-                        <span class="popup__input-error url-input-error"></span>
-                    </label>
-                    <button type="submit" class="popup__button popup__button_add">
-                        Guardar
-                    </button>
-                </fieldset>
-            </form>
+  <div class="page">
+    <div class="popup">
+      <div class="popup__container">
+        <button type="button" class="popup__button popup__button_close">
+          &#x1F7A9;
+        </button>
+        <div class="popup__images">
+          <div class="popup__content-image">
+            <img class="popup__image" src="#" alt="" />
+          </div>
+          <div class="popup__paragraph-content">
+            <p class="popup__paragraph"></p>
+          </div>
         </div>
-        <header class="header">
-            <img src="./images/Vector.svg" alt="logo-page" class="header__image" />
-        </header>
-        <main class="main">
-            <div class="main__profile">
-                <div class="main__content-image">
-                    <img src="./images/JacquesCousteau.jpg" alt="profile-image" class="main__profile-image" />
-                </div>
-                <div class="main__content-paragraph">
-                    <p class="main__paragraph main__paragraph_name">Jacques Cousteau</p>
-                    <p class="main__paragraph main__paragraph_about">Explorador</p>
-                    <button type="button" class="main__button main__button_edit">
-                        &#x1F58C;
-                    </button>
-                </div>
-                <button type="button" class="main__button main__button_add">
-                    &#x1F7A3;
-                </button>
-            </div>
-            <div class="main__gallery"></div>
-        </main>
-        <template id="main__template">
-            <div class="main__gallery-card">
-                <img class="main__gallery-image" />
-                <button type="button" class="main__button main__button_trash"></button>
-                <div class="main__gallery-content">
-                    <p class="main__gallery-paragraph"></p>
-                    <button type="button" class="main__button main__button_like"></button>
-                </div>
-            </div>
-        </template>
-        <footer class="footer">
-            <p class="footer__copyright">&#x00a9; 2024 Around The U.S.</p>
-        </footer>
+        <form class="popup__form form-edit" novalidate>
+          <h2 class="popup__subtitle">Editar perfil</h2>
+          <fieldset class="popup__content">
+            <label class="popup__field">
+              <input type="text" class="popup__input popup__input_name" placeholder="Nombre" minlength="2"
+                maxlength="40" id="name-input" required />
+              <span class="popup__input-error name-input-error"></span>
+            </label>
+            <label class="popup__field">
+              <input type="text" class="popup__input popup__input_about" placeholder="Acerca de mi" minlength="2"
+                maxlength="200" id="about-input" required />
+              <span class="popup__input-error about-input-error"></span>
+            </label>
+            <button type="submit" class="popup__button popup__button_save">
+              Guardar
+            </button>
+          </fieldset>
+        </form>
+        <form class="popup__form form-add" novalidate>
+          <h2 class="popup__subtitle">Nuevo lugar</h2>
+          <fieldset class="popup__content">
+            <label class="popup__field">
+              <input type="text" class="popup__input popup__input_title" placeholder="Titulo" minlength="2"
+                maxlength="30" id="title-input" required />
+              <span class="popup__input-error title-input-error"></span>
+            </label>
+            <label class="popup__field">
+              <input type="url" class="popup__input popup__input_url" placeholder="URL a la imagen" id="url-input"
+                required />
+              <span class="popup__input-error url-input-error"></span>
+            </label>
+            <button type="submit" class="popup__button popup__button_add">
+              Guardar
+            </button>
+          </fieldset>
+        </form>
+      </div>
     </div>
-    <script type="module" src="./script/index.js"></script>
+    <header class="header">
+      <img src="./images/Vector.svg" alt="logo-page" class="header__image" />
+    </header>
+    <main class="main">
+      <div class="main__profile">
+        <div class="main__content-image">
+          <img src="./images/JacquesCousteau.jpg" alt="profile-image" class="main__profile-image" />
+        </div>
+        <div class="main__content-paragraph">
+          <p class="main__paragraph main__paragraph_name">Jacques Cousteau</p>
+          <p class="main__paragraph main__paragraph_about">Explorador</p>
+          <button type="button" class="main__button main__button_edit">
+            &#x1F58C;
+          </button>
+        </div>
+        <button type="button" class="main__button main__button_add">
+          &#x1F7A3;
+        </button>
+      </div>
+      <div class="main__gallery"></div>
+    </main>
+    <template id="main__template">
+      <div class="main__gallery-card">
+        <img class="main__gallery-image" />
+        <button type="button" class="main__button main__button_trash"></button>
+        <div class="main__gallery-content">
+          <p class="main__gallery-paragraph"></p>
+          <button type="button" class="main__button main__button_like"></button>
+        </div>
+      </div>
+    </template>
+    <footer class="footer">
+      <p class="footer__copyright">&#x00a9; 2024 Around The U.S.</p>
+    </footer>
+  </div>
+  <script type="module" src="./page/index.js"></script>
 </body>
 
 </html>
