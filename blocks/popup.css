@@ -1,10 +1,10 @@
 .popup {
   display: none;
-  width: 890px;
+  width: 100%;
   height: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  /*transform: translate(-50%, -50%);*/
   position: fixed;
   align-content: center;
   z-index: 1;
@@ -13,17 +13,19 @@
 }
 
 .popup_opened {
-  display: block;
+   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .popup__container {
   display: flex;
   flex-direction: column;
   max-width: 500px;
-  height: 550px;
   position: relative;
   margin: auto;
-  align-items: flex-end;
+
+  
 }
 
 .popup__button {
@@ -38,18 +40,24 @@
 
 .popup__button_close {
   background: url(../images/Close-Icon.svg) center no-repeat;
-  width: 50px;
-  height: 50px;
+  width:26px;
+  height: 26px;
   font-size: 0;
   border: none;
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  background-size: contain;
   background-color: rgba(0, 0, 0, 0);
 }
 
 .popup__form {
-  margin: 0 auto;
-  max-width: 430px;
+  width: 430px;
   background-color: #fff;
   border-radius: 10px;
+  margin: 0 auto;
+   padding: 34px 36px 36px;
+  box-sizing: border-box;
 }
 
 .popup__item-hidden {
@@ -74,23 +82,23 @@
 .popup__paragraph-content {
   margin: auto;
   width: 400px;
-  font-family: "Inter-Regular", sans-serif;
+  font-family: inter, sans-serif;
   font-size: 12px;
   color: #fff;
 }
 
 .popup__subtitle {
-  font-family: "Inter-Black", sans-serif;
+  font-family: "inter-black", sans-serif;
   font-size: 24px;
-  width: 330px;
-  margin: 0 36px;
-  padding: 34px 0 54px;
+  line-height: 29px;
+  margin: 0;
+  padding: 0 0 30px;
 }
-
+  
 .popup__content {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 15px;
   width: 360px;
   margin: auto;
   border: 0;
@@ -107,14 +115,14 @@
   width: 100%;
   background-color: #000;
   padding: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 
 .popup__button_add {
   width: 100%;
   background-color: #000;
   padding: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 
 .popup__button_disabled {
@@ -162,6 +170,10 @@
     width: 240px;
   }
 }
+.popup__field {
+  display: block;
+  margin-bottom: 30px;
+}
 
 @media screen and (min-width: 585px) and (max-width: 880px) {
   .popup__container {
@@ -194,4 +206,5 @@
   .popup__input {
     width: 240px;
   }
+
 }

@@ -1,33 +1,36 @@
-import { closePop, butClose } from "../constants/utils.js";
-
 export default class Popup {
   constructor(popupSelector) {
-    this._popupSelector = popupSelector;
+    this._popup = document.querySelector(popupSelector);
+    this._handleEscClose = this._handleEscClose.bind(this);
   }
+
   _handleEscClose(e) {
     if (e.key === "Escape") {
-      closePop();
+      this.close();
     }
   }
 
   open() {
-    this._popupSelector.classList.add("popup_opened");
+    this._popup.classList.add("popup_opened");
+    document.addEventListener("keydown", this._handleEscClose);
   }
+
   close() {
-    closePop();
+    this._popup.classList.remove("popup_opened");
+    document.removeEventListener("keydown", this._handleEscClose);
   }
+
   setEventListeners() {
-    butClose.addEventListener("click", () => {
-      this.close();
-    });
-    document.addEventListener("click", (e) => {
-      const popClass = e.target.classList;
-      if (popClass.contains("popup_opened")) {
+    this._popup
+      .querySelector(".popup__button_close")
+      .addEventListener("click", () => {
+        this.close();
+      });
+
+    this._popup.addEventListener("mousedown", (evt) => {
+      if (evt.target === this._popup) {
         this.close();
       }
-    });
-    document.addEventListener("keydown", (e) => {
-      this._handleEscClose(e);
     });
   }
 }

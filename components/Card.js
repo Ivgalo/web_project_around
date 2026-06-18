@@ -50,7 +50,7 @@ export default class Card {
     this._setEventsListener();
 
     this._element.querySelector(".main__gallery-image").src = this._link;
-    this._element.querySelector(".main__gallery-image").alt = this._link;
+    this._element.querySelector(".main__gallery-image").alt = this._name;
     this._element.querySelector(".main__gallery-paragraph").textContent =
       this._name;
 

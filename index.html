@@ -9,62 +9,113 @@
   <meta name="keywords" content="html, css, javascript" />
   <title>Alrededor de los EE.UU.</title>
   <link rel="stylesheet" href="./page/index.css" />
-  <link rel="favicon" href="favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
 </head>
 
 <body>
   <div class="page">
-    <div class="popup">
-      <div class="popup__container">
-        <button type="button" class="popup__button popup__button_close">
-          &#x1F7A9;
-        </button>
-        <div class="popup__images">
-          <div class="popup__content-image">
-            <img class="popup__image" src="#" alt="" />
-          </div>
-          <div class="popup__paragraph-content">
-            <p class="popup__paragraph"></p>
-          </div>
-        </div>
-        <form class="popup__form form-edit" novalidate>
-          <h2 class="popup__subtitle">Editar perfil</h2>
-          <fieldset class="popup__content">
-            <label class="popup__field">
-              <input type="text" class="popup__input popup__input_name" placeholder="Nombre" minlength="2"
-                maxlength="40" id="name-input" required />
-              <span class="popup__input-error name-input-error"></span>
-            </label>
-            <label class="popup__field">
-              <input type="text" class="popup__input popup__input_about" placeholder="Acerca de mi" minlength="2"
-                maxlength="200" id="about-input" required />
-              <span class="popup__input-error about-input-error"></span>
-            </label>
+    <div class="popup" id="popup-image">
+   <div class="popup__container">
+    <button type="button" class="popup__button popup__button_close">&#x1F7A9;</button>
+    <div class="popup__content-image">
+      <img class="popup__image" src="#" alt="" />
+    </div>
+    <div class="popup__paragraph-content">
+      <p class="popup__paragraph"></p>
+     </div>
+    </div>
+   </div>
+        <div class="popup" id="popup-edit">
+  <div class="popup__container">
+    <button
+      type="button"
+      class="popup__button popup__button_close">
+    </button>
+
+    <form class="popup__form form-edit">
+      <h2 class="popup__subtitle">
+        Editar perfil
+      </h2>
+
+      <label class="popup__field">
+        <input
+          name="name"
+          type="text"
+          class="popup__input popup__input_name"
+          placeholder="Nombre"
+          minlength="2"
+          maxlength="40"
+          id="name-input"
+          required
+        />
+        <span class="popup__input-error name-input-error"></span>
+      </label>
+
+      <label class="popup__field">
+        <input
+          name="about"
+          type="text"
+          class="popup__input popup__input_about"
+          placeholder="Acerca de mí"
+          minlength="2"
+          maxlength="200"
+          id="about-input"
+          required
+        />
+        <span class="popup__input-error about-input-error"></span>
+      </label>
             <button type="submit" class="popup__button popup__button_save">
               Guardar
             </button>
-          </fieldset>
-        </form>
-        <form class="popup__form form-add" novalidate>
-          <h2 class="popup__subtitle">Nuevo lugar</h2>
-          <fieldset class="popup__content">
-            <label class="popup__field">
-              <input type="text" class="popup__input popup__input_title" placeholder="Titulo" minlength="2"
-                maxlength="30" id="title-input" required />
-              <span class="popup__input-error title-input-error"></span>
-            </label>
-            <label class="popup__field">
-              <input type="url" class="popup__input popup__input_url" placeholder="URL a la imagen" id="url-input"
-                required />
-              <span class="popup__input-error url-input-error"></span>
-            </label>
-            <button type="submit" class="popup__button popup__button_add">
-              Guardar
-            </button>
-          </fieldset>
-        </form>
-      </div>
-    </div>
+          </form>
+          </div>
+          </div>
+        <div class="popup" id="popup-add">
+  <div class="popup__container">
+    <button
+      type="button"
+      class="popup__button popup__button_close">
+    </button>
+
+    <form class="popup__form form-add">
+      <h2 class="popup__subtitle">
+        Nuevo lugar
+      </h2>
+
+      <label class="popup__field">
+        <input
+          name="title"
+          type="text"
+          class="popup__input popup__input_title"
+          placeholder="Título"
+          minlength="2"
+          maxlength="30"
+          id="title-input"
+          required
+        />
+        <span class="popup__input-error title-input-error"></span>
+      </label>
+
+      <label class="popup__field">
+        <input
+          name="link"
+          type="url"
+          class="popup__input popup__input_url"
+          placeholder="URL de la imagen"
+          id="url-input"
+          required
+        />
+        <span class="popup__input-error url-input-error"></span>
+      </label>
+
+      <button
+        type="submit"
+        class="popup__button popup__button_add">
+        Guardar
+      </button>
+    </form>
+  </div>
+</div>
     <header class="header">
       <img src="./images/Vector.svg" alt="logo-page" class="header__image" />
     </header>
