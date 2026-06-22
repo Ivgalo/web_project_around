@@ -75,8 +75,11 @@
 }
 
 .popup__image {
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  max-height: 560px;
+  object-fit: contain;
 }
 
 .popup__paragraph-content {

@@ -8,8 +8,12 @@ import {
   gallery,
   initialCards,
   validationConfig,
+  formElements,
+  formValidators,
   paragName,
   paragAbout,
+  inpName,
+  inpAbout,
   editFormSelector,
   addFormSelector,
   editButton,
@@ -32,7 +36,7 @@ const sectionCard = new Section(
   gallery
 );
 
-sectionCard.renderer();
+sectionCard.renderItems();
 const popupFormEdit = new PopupWithForm(
   "#popup-edit",
   editFormSelector,
@@ -63,8 +67,22 @@ const popupFormAdd = new PopupWithForm(
 );
 
 popupFormAdd.setEventListeners();
+
+formElements.forEach((formElement) => {
+  const formValidator = new FormValidator(
+    validationConfig,
+    formElement
+  );
+
+  formValidator.enableValidation();
+  formValidators.push(formValidator);
+});
 editButton.addEventListener("click", () => {
   const data = userInfo.getUserInfo();
+
+  inpName.value = data.name;
+  inpAbout.value = data.job;
+
   popupFormEdit.open();
 });
 
