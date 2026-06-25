@@ -68,14 +68,17 @@ const popupFormAdd = new PopupWithForm(
 
 popupFormAdd.setEventListeners();
 
-formElements.forEach((formElement) => {
-  const formValidator = new FormValidator(
-    validationConfig,
-    formElement
-  );
 
-  formValidator.enableValidation();
-  formValidators.push(formValidator);
+formElements.forEach((form) => {
+  const validator =
+    new FormValidator(
+      validationConfig,
+      form
+    );
+
+  validator.enableValidation();
+
+  formValidators.push(validator);
 });
 editButton.addEventListener("click", () => {
   const data = userInfo.getUserInfo();
@@ -83,9 +86,13 @@ editButton.addEventListener("click", () => {
   inpName.value = data.name;
   inpAbout.value = data.job;
 
+  formValidators[0].resetValidation();
+
   popupFormEdit.open();
 });
 
 addButton.addEventListener("click", () => {
+  formValidators[1].resetValidation();
+
   popupFormAdd.open();
 });
