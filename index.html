@@ -74,13 +74,11 @@
   <div class="popup__container">
     <button
       type="button"
-      class="popup__button popup__button_close">
-    </button>
+      class="popup__button popup__button_close"
+    ></button>
 
     <form class="popup__form form-add">
-      <h2 class="popup__subtitle">
-        Nuevo lugar
-      </h2>
+      <h2 class="popup__subtitle">Nuevo lugar</h2>
 
       <label class="popup__field">
         <input
@@ -110,12 +108,66 @@
 
       <button
         type="submit"
-        class="popup__button popup__button_add">
+        class="popup__button popup__button_add"
+      >
         Guardar
       </button>
     </form>
   </div>
 </div>
+
+<div class="popup" id="popup-confirm">
+  <div class="popup__container">
+    <button
+      type="button"
+      class="popup__button popup__button_close"
+    ></button>
+
+    <form class="popup__form form-confirm" name="confirm-delete">
+      <h2 class="popup__subtitle">¿Estás seguro?</h2>
+
+      <button
+        type="submit"
+        class="popup__button popup__button_confirm"
+      >
+        Sí
+      </button>
+    </form>
+  </div>
+</div>
+    <div class="popup" id="popup-avatar">
+  <div class="popup__container">
+    <button
+      type="button"
+      class="popup__button popup__button_close"
+      aria-label="Cerrar"
+    ></button>
+
+    <form class="popup__form form-avatar">
+      <h2 class="popup__subtitle">Cambiar foto de perfil</h2>
+
+      <label class="popup__field">
+        <input
+          name="avatar"
+          type="url"
+          class="popup__input popup__input_avatar"
+          placeholder="URL de la imagen"
+          id="avatar-input"
+          required
+        />
+        <span class="popup__input-error avatar-input-error"></span>
+      </label>
+
+      <button
+        type="submit"
+        class="popup__button popup__button_save"
+      >
+        Guardar
+      </button>
+    </form>
+  </div>
+</div>
+
     <header class="header">
       <img src="./images/Vector.svg" alt="logo-page" class="header__image" />
     </header>
@@ -123,7 +175,14 @@
       <div class="main__profile">
         <div class="main__content-image">
           <img src="./images/JacquesCousteau.jpg" alt="profile-image" class="main__profile-image" />
-        </div>
+          <button
+    type="button"
+    class="main__button main__button_avatar"
+    aria-label="Editar foto de perfil"
+  >
+    ✎
+  </button>
+</div>
         <div class="main__content-paragraph">
           <p class="main__paragraph main__paragraph_name">Jacques Cousteau</p>
           <p class="main__paragraph main__paragraph_about">Explorador</p>

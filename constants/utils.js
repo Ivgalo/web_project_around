@@ -15,7 +15,14 @@ export const inpUrl = document.querySelector(".popup__input_url");
 export const popupImageElement = popimg.querySelector(".popup__image");
 export const popupTextElement = popimg.querySelector(".popup__paragraph");
 export const gallery = ".main__gallery";
+export const avatarButton = document.querySelector(".main__button_avatar");
+export const avatarFormSelector = ".form-avatar";
+export const inpAvatar = document.querySelector(".popup__input_avatar");
+export const avatarImage = document.querySelector(
+  ".main__profile-image"
+);
 export const initialCards = [
+  
   {
     name: "Valle de Yosemite",
     link: "./images/valle-yosemite.jpg",
