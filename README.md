@@ -14,3 +14,5 @@ GRID LAYOUT
 JAVASCRIPT
 
 En este proyecto se utilizan por primera vez javascript
+
+Actualización de estructura del proyecto.
